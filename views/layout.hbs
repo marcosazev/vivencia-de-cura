@@ -4,57 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pra você e por você</title>
+  <title>todos por um</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
-  
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+<link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
-  <script type="text/javascript">
-let socket = io();
+  
 
-function renderMessage(message){
-$(".messages").append(`<div class="message"><strong>`+ message.author+`</strong>:`+ message.message + "</div>");
-console.log("rendered")
-}
 
-socket.on("previousMessages",function(messages){
-for(message of messages){
-renderMessage(message);
-}
-})
-
-socket.on("receivedMessage",function(message){
- renderMessage(message); 
-})
-
-$("#chat").submit(function(event){
-
-event.preventDefault();
-
- let author = $("input[name=username]").val();
- let message = $("input[name=message]").val();
-
- if(author.length && message.length){
-
-  let messageObject ={
-author:author,
-message:message,
-
-  };
- renderMessage(messageObject);
-
- socket.emit("sendMessage",messageObject);
-}
-
-});
-</script>
 </body>
 </html>

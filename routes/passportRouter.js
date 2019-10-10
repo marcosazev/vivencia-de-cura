@@ -29,6 +29,7 @@ passportRouter.get("/signup", (req, res) => {
 });
 
 passportRouter.post("/signup",  (req, res, next) => {
+  console.log(req.body)
   const username = req.body.username;
   const password = req.body.password;
   const name = req.body.name;
@@ -52,6 +53,7 @@ passportRouter.post("/signup",  (req, res, next) => {
       username,
       name,
       password: hashPass,
+      disease,
       role:"ADMIN"
     });
 
@@ -92,7 +94,6 @@ passportRouter.get("/private-chat", ensureLogin.ensureLoggedIn(), (req, res) => 
 
 passportRouter.get("/chatAdmin", ensureLogin.ensureLoggedIn(), checkAdmin, (req, res) => {
   Message.find()
-  
   .then(retorno => {
    
   res.render("passport/privateAdmin", { user: req.user , retorno})
@@ -103,9 +104,13 @@ passportRouter.get("/chatAdmin", ensureLogin.ensureLoggedIn(), checkAdmin, (req,
 });
 
 
+passportRouter.get("/admin", ensureLogin.ensureLoggedIn(), checkAdmin, (req, res) => {
 
+  res.render("passport/chat", { user: req.user})
+});
+  
 passportRouter.get("/private-chat", ensureLogin.ensureLoggedIn(), (req, res) => {
-  Message.find()
+  Message.find({username})
   .then(retorno => {
    
   res.render("passport/private", { user: req.user , retorno})
@@ -115,15 +120,34 @@ passportRouter.get("/private-chat", ensureLogin.ensureLoggedIn(), (req, res) => 
   
 });
 
-passportRouter.get("/admin", (req, res) => {
-  const { username } = req.body;
+passportRouter.post("/admin", (req, res) => {
+  
+  const username = req.body.username;
+  console.log(username)
   User.find({username})
   .then(users => {
-    res.render('passport/privateAdmin', {users})
+    console.log(users)
+  res.render("passport/chat", { user: req.user , users})
+})
 
-  })
-  .catch(err=> console.log(err))
+  .catch(err => console.log(err))
+  
 });
+
+passportRouter.post('/:id/deleteUser',(req, res) => {
+  const { id }=req.params;
+ let mod= id.split("").filter((item,idx) => idx !==0).join("")
+  
+
+ User.findByIdAndDelete(mod)
+ .then((movie) => {
+  res.render("passport/chat", { user: req.user })
+   })
+   .catch((movie) => {
+     console.log("error")
+   
+   })
+ });
 
 
 

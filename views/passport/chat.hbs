@@ -1,0 +1,25 @@
+<h1 name="username">Bem vindo(a) <span>{{ user.username}}</span>
+ <form id="chat1" action="/admin" method="post">
+    <label for="username">Username:</label>
+    <input name="username" type="text" id="username" placeholder="busque por nome de usuario">
+    <button type="submit">Enviar</button>
+ </form>
+ 
+    
+
+      {{#each users}}
+      <input name="username" type="text" class="form-control" id="username-input" value={{this.username}}>
+      <input name="name" type="text" class="form-control" id="name-input" value={{this.name}}>
+      <input name="disease" type="text" class="form-control" id="disease-input" value={{this.disease}}>
+
+      
+      <form action=":{{this._id}}/deleteUser" method="POST">
+      <button type="submit">Deletar</button>
+      </form><form action=":{{this._id}}/updateUser" method="POST">
+      <button type="submit">Atualizar</button>
+      </form>
+
+      {{/each}}
+
+    
+  
