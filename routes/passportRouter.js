@@ -14,7 +14,7 @@ function checkRoles(role) {
     if (req.user.role === "ADMIN") {
       return next();
     } else {
-      res.redirect('/private-chat')
+      alert("acesso negado")
     }
   }
 };
@@ -75,32 +75,59 @@ res.render("passport/login",{"message": req.flash("error")});
 });
 
 passportRouter.post("/login", passport.authenticate("local", {
-  successRedirect: "/chatAdmin",
+  successRedirect: "/selectRoom",
   failureRedirect: "/login",
   //failureFlash: true,
   passReqToCallback: true
 }));
 
-passportRouter.get("/private-chat", ensureLogin.ensureLoggedIn(), (req, res) => {
-  Message.find()
-  .then(retorno => {
-   
-  res.render("passport/private", { user: req.user , retorno})
+passportRouter.get("/private-chat/:roomFromRoute", ensureLogin.ensureLoggedIn(), (req, res) => {
+  const { roomFromRoute } = req.params;
+
+  Message.find({ room: roomFromRoute })
+  .then(messages => {
+ if(roomFromRoute=="chat1"){
+  res.render("passport/chatRooms/chatRoom1", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat2"){
+  res.render("passport/chatRooms/chatRoom2", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat3"){
+  res.render("passport/chatRooms/chatRoom3", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat4"){
+  res.render("passport/chatRooms/chatRoom4", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat5"){
+  res.render("passport/chatRooms/chatRoom5", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat6"){
+  res.render("passport/chatRooms/chatRoom6", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat7"){
+  res.render("passport/chatRooms/chatRoom7", { user: req.user , messages, roomFromRoute})
+ }
+
+ if(roomFromRoute=="chat8"){
+  res.render("passport/chatRooms/chatRoom8", { user: req.user , messages, roomFromRoute})
+ }
+
 })
 
-  .catch(err => console.log(err))
+
   
 });
 
-passportRouter.get("/chatAdmin", ensureLogin.ensureLoggedIn(), checkAdmin, (req, res) => {
-  Message.find()
-  .then(retorno => {
-   
-  res.render("passport/privateAdmin", { user: req.user , retorno})
-})
-
-  .catch(err => console.log(err))
+passportRouter.get("/selectRoom", ensureLogin.ensureLoggedIn() , (req, res) => {
   
+  res.render("passport/selectRoom", { user: req.user })
+ 
 });
 
 

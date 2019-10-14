@@ -1,0 +1,30 @@
+{{#if user}}
+
+  <h1 name="username">Bem vindo a sala {{roomFromRoute}} administrador <span>{{ user.username}}</span>
+       
+       
+        
+  <a href="/admin">controle de usuarios</a>
+
+      
+      <div class="users"> </div>
+      <form id ="chat1">
+    <div class="messages">
+      {{#each messages}}
+      <div class="message"><strong> {{this.author}}</strong>:{{this.message}} </div>
+    
+      {{/each}}
+
+    </div>
+     <input type="hidden"  name="username" value={{user.username}}>
+     <input type="hidden"  name="room" value={{roomFromRoute}} >
+     <input type="text" name="message" id="textInput" placeholder="Digite sua mensagem">
+    <button type="submit">Enviar</button>
+
+  </form>
+
+<a href="/logout">log out</a>
+{{/if}}
+
+  <script src="/javascripts/script6.js"></script>
+

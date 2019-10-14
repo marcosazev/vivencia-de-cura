@@ -11,7 +11,11 @@
       <input name="username" type="text" class="form-control" id="username-input" value={{this.username}}>
       <input name="name" type="text" class="form-control" id="name-input" value={{this.name}}>
       <input name="disease" type="text" class="form-control" id="disease-input" value={{this.disease}}>
-
+      <input name="role" list="role" class="form-control" id="disease-input">
+      <datalist id="role">
+    <option value="GUEST">
+    <option value="ADMIN">
+   </datalist>
       
       <form action=":{{this._id}}/deleteUser" method="POST">
       <button type="submit">Deletar</button>

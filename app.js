@@ -117,25 +117,237 @@ app.use('/', passportRouter);
 //socket io
 let messages= [];
 
-sockIO.on("connection", socket =>{
+sockIO
+.of("/chat1")
+.on("connection", socket =>{
 console.log(`Socket conectado: ${socket.id}`)
 
 socket.emit("previousMessages", messages);
 
 socket.on(`sendMessage`, data => {
-  console.log(data);
-  const { author, message } = data;
+  console.log(data)
+  const { author, message, room} = data;
+
   let newMessage = new Message({
     author,
-    message
+    message,
+    room,
+    
   })
   newMessage.save()
-    .then(retorno => console.log(`Mensagem ${retorno.message} salva`))
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
     .catch(err => console.log(err))
  
 socket.broadcast.emit("receivedMessage", data);
 });
 
 });
+
+
+sockIO
+.of("/chat2")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+
+
+sockIO
+.of("/chat3")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+sockIO
+.of("/chat4")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+sockIO
+.of("/chat5")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+sockIO
+.of("/chat6")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+sockIO
+.of("/chat7")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+sockIO
+.of("/chat8")
+.on("connection", socket =>{
+console.log(`Socket conectado: ${socket.id}`)
+
+socket.emit("previousMessages", messages);
+
+socket.on(`sendMessage`, data => {
+  console.log(data)
+  const { author, message, room} = data;
+
+  let newMessage = new Message({
+    author,
+    message,
+    room,
+    
+  })
+  newMessage.save()
+
+    .then(retorno => console.log(`Mensagem ${retorno} salva`))
+    .catch(err => console.log(err))
+ 
+socket.broadcast.emit("receivedMessage", data);
+});
+
+});
+
+
+
+
+
+
+
+
 
 module.exports = app;

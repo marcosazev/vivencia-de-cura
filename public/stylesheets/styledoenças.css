@@ -1,0 +1,32 @@
+.header-search-form :placeholder-shown{
+    background-color: transparent;
+}
+
+body {
+    text-align: justify
+}
+
+#searchbtn {
+    width: 40px;
+}
+
+.text {
+    background-size: 80px
+}
+
+.text2 {
+    background-color: #fff;
+    box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.4);
+    padding: 4vw 7vw 4vw 7vw;
+    width: 80%;
+    margin: 5%
+}
+
+h1 {
+    font-family: 'Poppit and Finch', Helvetica, Arial, Lucida, sans-serif;
+    margin-bottom: 3%
+}
+
+img {
+    width: 100%;
+}

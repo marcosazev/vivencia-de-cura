@@ -1,0 +1,467 @@
+
+.body2 {
+    height: 97vh;
+    width: 98%;
+    text-align: justify;
+    background-image: url(/images/logo1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+
+img {
+    height: 400px;
+}
+
+.bg-img1 {
+    background-image: url(/images/aids.jpg);
+    background-size: 100% 100%; 
+}
+
+.bg-img2 {
+    background-image: url(/images/ansiedade.jpg);
+    background-size: 100% 100%;
+}
+
+.bg-img3 {
+    background-image: url(/images/avc.jpg);
+    background-size: 100% 100%;
+}
+
+.bg-img4 {
+    background-image: url(/images/depressao.jpg);
+    background-size: 100% 100%;
+}
+
+.bg-img5 {
+    background-image: url(/images/diabetes.jpg);
+    background-size: 100% 100%;
+}
+
+.bg-img6 {
+    background-image: url(/images/mama.jpg);
+    background-size: 100% 100%;
+}
+
+.bg-img7 {
+    background-image: url(/images/obesidade.jpg);
+    background-size: 100% 100%;
+}
+
+.bg-img8 {
+    background-image: url(/images/toc.jpg);
+    background-size: 100% 100%;
+}
+
+.h-1000 {
+    height: 100vh;
+    /* background-repeat: no-repeat; */
+}
+
+.slide-text{
+padding-top: 400px;
+max-width: 800px;
+
+}
+
+
+.section-a {
+    font-size: 70px;
+    font-weight: 900;
+    font-family: 'Nothing You Could Do', cursive;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 10px
+}
+
+p {
+    font-size: 23px;
+    font-weight: 800;
+    overflow-wrap: break-word;
+}
+
+
+
+.navbar {
+    background-color: rgba(0,0,0,.1)
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(255, 255, 255)
+}
+
+.navbar-toggler-icon {
+    background-image: none
+}
+
+
+.text {
+    color: white !important
+}
+
+/* login/signup */
+
+
+.body1 {
+    background-image: url(/images/logo2.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 50%;
+    height: 90%;
+}
+
+.allForm {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    height: 56%;
+}
+
+.allForm2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    height: 80%;
+}
+
+.barra {
+    width: 100%;
+    max-width: 100%
+}
+
+
+/* style doeças */
+
+#searchbtn {
+    width: 40px;
+}
+
+.text {
+    background-size: 80px
+}
+
+.text2 {
+    background-color: #fff;
+    box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.4);
+    padding: 5vw 8vw 5vw 8vw;
+    width: 80%;
+    margin: 5%;
+    color: black
+}
+
+.text2 > p {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: fantasy, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    margin-bottom: 3%;
+    font-weight: 800
+}
+
+img {
+    width: 100%;
+}
+
+/* chat */
+
+#chat {
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+.inputChat {
+    width: 600px;
+    border: 1px solid #ddd;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+  
+  
+.message {
+    width: fit-content;
+    padding: 0 2%;
+    background: lightgreen;
+    margin-bottom: 1%;
+    line-height: 50px;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px 10px 10px 0
+}
+
+.messages {
+    width: 600px;
+    height: 400px;
+    overflow: auto;
+}
+
+.chatBox{
+      position: relative;
+      margin: 2%;
+      padding: 20px;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      max-height: 80vh;
+      min-height: 50vh;
+      overflow-y: scroll;
+      background-color: #FFF;
+      height: calc(100vh - 200px);
+}
+
+.aChat {
+    width: 90px;
+    font-size: 14px;
+    background: #069;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    color: #FFF;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.aChat:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.h1Chat {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+#diseases {
+    background: #FFF
+}
+
+/* CARDS */
+.body2 {
+    width: 100%
+}
+
+.card4 {
+    width: 25%;
+}
+
+.card {
+    margin: 12% 1%;
+    border-radius: 10px;
+}
+
+.card-text {
+    font-size: 10px !important
+}
+
+.card-body img {
+    height: 100px;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 361px) {
+    /* celular */
+        .section-a {
+            margin-top: 40% !important;
+            font-size: 30px !important;
+        }
+        .section-a p {
+            font-size: 18px !important;
+        }
+        h1 {
+            font-size: 18px !important
+        }
+        .text2 p{
+            font-size: 8px !important
+        }
+        .allForm2 {
+            height: 74% !important;
+        }
+        /* .form-control {
+            height: 20px !important;
+        } */
+        .form-group label {
+            font-size: 13px
+        }
+        .barra p {
+            font-size: 12px !important
+        }
+        .h1Chat {
+            font-size: 23px !important
+        }
+        .buttonChat0 {
+            width: 167px !important;
+        }
+        .aChat {
+            width: 52px !important;
+        }
+    }
+
+@media only screen and (max-width: 425px) {
+/* celular */
+    .section-a {
+        margin-top: 45% !important;
+        font-size: 30px
+    }
+    .section-a p {
+        font-size: 20px
+    }
+    .navbar-collapse {
+        width: 100%
+    }
+    /* .form-control{
+        width: 100% !important;
+        height: 30px;
+    } */
+    h1 {
+        font-size: 23px
+    }
+    .text2 p{
+        font-size: 12px
+    }
+    .allForm {
+        height: 40% !important;
+    }
+    .allForm2 {
+        height: 73%;
+    }
+    .container {
+        width: 65% !important
+    }
+    .barra p {
+        font-size: 15px;
+        margin-top: 8px
+    }
+    .h1Chat {
+        font-size: 27px
+    }
+    .buttonChat0 {
+        width: 176px;
+    }
+    .aChat {
+        width: 65px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 23px
+    }
+    .text2 p{
+        font-size: 12px
+    }
+    .container {
+        width: 60% !important
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar-collapse {
+        background-color: black;
+        padding: 30px;
+    }
+    .chatBox {
+        width: 70% !important;
+        height: 55% !important;
+    }
+    .message {
+        font-size: 18px !important
+    }
+    .inputChat {
+        width: 70% !important;
+    }
+    .buttonChat {
+        width: 70% !important;
+    }
+    #chat {
+        margin-top: 3%
+    }
+    /* .form-control {
+        height: 30px;
+    } */
+    .barra p {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+    .allForm2 {
+        height: 77%;
+    }
+  }
+
+@media only screen and (min-width: 991px) {
+    .allForm {
+        margin-left: 20%;
+        height: 50%;
+    }
+    .allForm2 {
+        margin-left: 14%;
+    }
+    /* .form-control {
+        height: 30px;
+    } */
+    .chatBox {
+        width: 80% !important;
+        height: 55% !important;
+    }
+    .inputChat {
+        width: 80% !important;
+    }
+    .buttonChat {
+        width: 80% !important;
+    }
+    .barra p {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+}
+
+.hero {
+    display: table;
+    position: relative;
+    background-image: url(/images/logo2.jpg);
+    background-size: cover;
+    padding: 150px 0;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .hero:after {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  .hero-brand {
+    margin-bottom: 75px;
+    display: inline-block;
+  }
+  
+  .hero-brand:hover {
+    opacity: .75;
+  }
+
+  
